@@ -1,0 +1,126 @@
+
+This is an HTML document that creates a simple "to-do" list application.
+
+It includes a form with an input field for adding tasks, and an unordered list
+to display the tasks. The list items include Font Awesome icons for indicating
+a task has been completed or for deleting a task. The document also includes links to a CSS
+stylesheet and a JavaScript file for handling the functionality of the application.
+
+
+This block of code includes several meta tags that provide information about the document and
+its presentation.
+
+The first meta tag sets the character encoding for the document to UTF-8. This ensures that any special 
+characters in the HTML, such as accented letters or non-Latin characters, are displayed correctly.
+The second meta tag tells Internet Explorer to use the latest version of its rendering engine, instead 
+of an older version that may not support all of the HTML and CSS used in the document.
+The third meta tag sets the viewport, which is the area of the browser window that is used to display the
+web page. The "width=device-width" part sets the width of the viewport to the width
+ of the device screen.
+The "initial-scale=1.0" part sets the initial zoom level when the page is first loaded
+ by the browser. This 
+is useful for ensuring that the page is properly scaled on mobile devices.
+
+
+Together, these tags help ensure that the page is properly displayed and
+rendered on different devices and browser.
+
+
+This line of code links to a CSS file called "style.css" in the same directory 
+as the HTML file.This file is used 
+to define the styling and layout of the elements in the HTML document. The CSS styles defined
+in this file will be 
+applied to the elements in the HTML, allowing for control over things like colors, font sizes,
+spacing, and more. 
+This makes it easy to separate the presentation from the structure of the document, 
+making it 
+easier to maintain 
+and modify the style without affecting the HTML.
+
+
+<input type="text" class="input" 
+placeholder="Enter your task"
+autocomplete="off"/>
+
+This is an HTML code snippet for an input field of type "text". The input field has a 
+class of "input" and a placeholder text of "Enter your task". 
+The autocomplete attribute
+is set to "off" which means that the browser will not automatically fill in 
+values for the input field.
+
+
+const formEl = document.querySelector(".form");
+
+const inputEl = document.querySelector(".input");
+
+const ulEl = document.querySelector(".list");
+
+This is JavaScript code that is selecting elements from the DOM (Document Object Model) 
+using the querySelector() method.
+
+const formEl = document.querySelector(".form"); will select the first element that 
+matches the class "form" and assigns it to the variable formEl.
+
+const inputEl = document.querySelector(".input"); will select the first element that
+matches the class "input" and assigns it to the variable inputEl.
+
+const ulEl = document.querySelector(".list"); will select the first element that
+matches the class "list" and assigns it to the variable ulEl.
+
+The querySelector() method returns the first element that matches the specified CSS class.
+These variables can be used to manipulate the selected elements in the DOM.
+
+. is for class in css
+
+
+let list = JSON.parse(localStorage.getItem("list"));
+if (list) {
+  list.forEach((task) => { toDoList(task);
+  });
+}
+
+This code is retrieving data from the browser's localStorage using the getItem() method 
+and parsing it into a JavaScript object using JSON.parse(). The localStorage.getItem("list") 
+returns the value of the "list" key in the localStorage, which is a string, so it's parsed into
+a JavaScript object and assigned to the list variable.
+
+Then, it checks if the list variable is truth, which means that it has a value and it's not
+null, undefined or []. If the list variable is truth, it will iterate over the list using 
+forEach() method and call the toDoList(task) function passing the task as the argument.
+
+This code snippet is likely used to display the list items that were previously stored in 
+the browser's local storage on page load.
+
+
+
+localStorage is a property of the window object in JavaScript that allows you to store key-value pairs 
+of data in the browser's storage. The data stored in localStorage is only accessible from the same origin
+as the website that stored it and is persistent across browser sessions, meaning it will not be deleted 
+when the browser is closed.
+
+localStorage allows you to store strings, and it's commonly used to store JSON data after stringifying 
+it. The setItem() method is used to add key-value pairs to localStorage, and the getItem() method is
+used to retrieve the value of a key. You can also use the removeItem() method to delete a key-value 
+pair, or the clear() method to remove all data.
+
+Note that localStorage has a storage limit of about 5-10 MB depending on the browser, so it should
+not be used to store large amounts of data.
+
+
+let list = JSON.parse(localStorage.getItem("list"));
+
+This code is retrieving data from the browser's localStorage using the getItem() method 
+and parsing it 
+into a JavaScript object using JSON.parse(). The localStorage.getItem("list") method returns
+the value 
+of the "list" key in the localStorage, which is a string, so it's parsed into a JavaScript
+object and assigned to the list variable.
+
+JSON.parse() is a method that takes a JSON string and converts it into a JavaScript object. 
+This
+allows the data to be easily manipulated and accessed like a normal JavaScript object.
+
+This code is likely used to retrieve a list of items that was previously stored in the browser's 
+local storage. Once the data has been retrieved and parsed, it can be used in the JavaScript code 
+to display the list or perform other actions on it.
+
